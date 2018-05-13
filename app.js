@@ -19,7 +19,11 @@ var nav = [{ link: '/books', title: 'Book' },
      { link: '/authors', title: 'Author' }];
 
 var bookRouter = require('./src/routes/bookRoutes')(nav);
+var adminRouter = require('./src/routes/adminRoutes')(nav);
+
 app.use('/books', bookRouter);
+app.use('/admin', adminRouter);
+
 app.get('/', function(req, res){
   res.render(
     'index', {
